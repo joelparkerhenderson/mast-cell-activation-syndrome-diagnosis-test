@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <title>Mast Cell Activation Syndrome (MCAS) Diagnosis Test</title>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/pure-min.css" integrity="sha512-X2yGIVwg8zeG8N4xfsidr9MqIfIE8Yz1It+w2rhUJMqxUwvbVqC5OPcyRlPKYOw/bsdJut91//NO9rSbQZIPRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/grids-responsive.min.css" integrity="sha512-5hr5fSxiYwkxK0EZX2B/DILA1QoyXwIf9ynWVbyMvqcMIDZ0XZKWw+xk9mysLSOLV4iMrBB1t/YAxt/006W4HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.0/cdn.min.js" integrity="sha512-4e/5PZ1eoLJMDjaJXTHkWRA0yec8bm07/iINYSd5rdJ38jGm5OZkEi3J+7LqSDWNATNJ4/aneNlrk2AYnnckIg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            @media screen and (min-width: 640px) {
+                main {
+                    max-width: 640px;
+                    margin: 0 auto;/*Centering this container*/
+                }
+            }
+            body {
+                font-family:Arial,helvetica,sans-serif;
+                font-size:100%;
+                font-size:1em;
+            }
+            .center {
+                 justify-content: center;
+                 text-align:center;
+            }
+            header, footer {
+                width: 100%;
+                background-color: #ddd;
+                color: #111;
+                font-weight: bold;
+            }
+            header {
+                border-bottom: 1px solid #888;
+                margin-bottom: 2em;
+            }
+            footer {
+                border-top: 1px solid #888;
+                margin-top: 2em;
+            }
+            main {
+            }
+            .pure-menu-link {
+                color: #111;
+            }
+            .pure-menu-link i {
+                margin-right: 0.25em;
+            }
+            a.pure-menu-link:hover {
+                background: #eee;
+                color: #222;
+            }
+            .questions ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            .questions li {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+            .questions input {
+                margin-right: 0.5em;
+            }
+            /*
+            .questions label {
+                display: block;
+            }
+            */
+        </style>
+    </head>
+	<body>
+
+        <header>
+            <nav class="pure-g center" xstyle="background:#f0f0f0;padding:0.5em;">
+                <div class="pure-u-1-3">
+                    <a class="pure-menu-link" href="https://joelparkerhenderson.github.io/mast-cell-activation-syndrome-diagnosis-app/"><i class="fa-solid fa-house"></i>Home</a>
+                </div>
+                <div class="pure-u-1-3">
+                    <a class="pure-menu-link" href="https://github.com/joelparkerhenderson/mast-cell-activation-syndrome-diagnosis-app/"><i class="fa-solid fa-folder"></i>Code</a>
+                </div>
+                <div class="pure-u-1-3">
+                    <a class="pure-menu-link" href="mailto:joel@joelparkerhenderson.com" class="pure-menu-link"><i class="fa-solid fa-envelope"></i>Email</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+
+            <h1>Mast Cell Activation Syndrome (MCAS) Diagnosis Test</h1>
+
+            <p>
+                Mast Cell Activation Syndrome (MCAS) diagnosis is complex for
+                some healthcare providers because MCAS is a relatively new
+                diagnosis. This web application can help patients and providers.
+            </p>
+
+            <p>
+                The app is based on the medical journal article "Diagnosis of
+                mast cell activation syndrome: a global 'consensus-2'" (Afrin et
+                al.). The app is developed by Joel Parker Henderson.
+            </p>
+
+            <script>
+                document.addEventListener('alpine:init', () => {
+                    Alpine.data('survey', () => ({
+
+                        majorCriteriaQuestions: [
+                            { id: `0504b00c481d074130c6d4182c16c49a`, text: `Constellation of clinical complaints attributable to pathologically increased mast cell activity (mast cell mediator release syndrome)` },
+                            { id: `19a56d16dfd5127c5d6b1aadde456c12`, text: `Absence of any other disease better accounting for the problems` },
+                        ],
+                    
+                        minorCriteriaQuestions: [
+                            { id: `e6e200f7f17df55f22c3cfa521a705a7`, text: `Symptomatic response to inhibitors of mast cell activation or mast cell mediator production or action)` },
+                            { id: `a4157ddb1cbc80da2baef35f55b2b83d`, text: `Multifocal or disseminated infiltrates of mast cells in marrow and/or extracutaneous organ(s) (e.g., gastrointestinal or genitourinary tract; >19 mast cells/high power field)` },
+                            { id: `a324e8e4d7bb92e2851df63752a31c06`, text: `Abnormal spindle-shaped morphology in >25% of mast cells in marrow or other extracutaneous organ(s)` },
+                            { id: `38f462111c7bd8acf59aeaf2d2c55bd0`, text: `Abnormal mast cell expression of CD2 and/or CD25 (i.e., co-expression of CD117/CD25 or CD117/CD2)` },
+                            { id: `72fec223256032f035b2821f41814a13`, text: `Mast cell genetic changes (e.g., activating KIT codon 419, 509 or 560 mutations) shown to increase mast cell activity` },
+                            { id: `b7721507b4a86aff1b0f86cf53cb7443`, text: `Evidence (typically from body fluids such as whole blood, serum, plasma, or urine) of above-normal levels of mast cell mediators including: tryptase, histamine or its metabolites (e.g., N-methylhistamine), heparin, chromogranin A (note potential confounders of cardiac or renal failure, neuroendocrine tumors, recent proton pump inhibitor use, or chronic atrophic gastritis), other relatively mast cell-specific mediators (e.g., ecosanoids including prostaglandin (PG) D2, its metabolite 11-B-PGF2a, or leukotriene E4)` },
+                        ],
+
+                        score: 0,
+
+                        scorer() {
+                            let _score = 0;
+
+                            let hasSymptoms = document.getElementById('0504b00c481d074130c6d4182c16c49a').checked;
+                            let hasExclusions = document.getElementById('19a56d16dfd5127c5d6b1aadde456c12').checked;
+                            let hasResponses = document.getElementById('e6e200f7f17df55f22c3cfa521a705a7').checked;
+                            let hasInfiltrates = document.getElementById('a4157ddb1cbc80da2baef35f55b2b83d').checked;
+                            let hasAbnormalMorphology = document.getElementById('a324e8e4d7bb92e2851df63752a31c06').checked;
+                            let hasAbnormalExpression = document.getElementById('38f462111c7bd8acf59aeaf2d2c55bd0').checked;
+                            let hasGeneticChanges = document.getElementById('72fec223256032f035b2821f41814a13').checked;
+                            let hasEvidence = document.getElementById('b7721507b4a86aff1b0f86cf53cb7443').checked;
+
+                            let hasMajorCriteria = 
+                                hasSymptoms && 
+                                hasExclusions;
+
+                            let hasMinorCriteria = 
+                                hasResponses || 
+                                hasInfiltrates || 
+                                hasAbnormalMorphology || 
+                                hasAbnormalExpression || 
+                                hasGeneticChanges || 
+                                hasEvidence;
+
+                            let majorCriterionPoints = Math.floor(50 / 2);
+                            let minorCriterionPoints = Math.floor(50 / 6);
+
+                            if (hasSymptoms) { _score += majorCriterionPoints; }
+                            if (hasExclusions) { _score += majorCriterionPoints; }
+                            if (hasResponses) { _score += minorCriterionPoints; }
+                            if (hasInfiltrates) { _score += minorCriterionPoints; }
+                            if (hasAbnormalMorphology) { _score += minorCriterionPoints; }
+                            if (hasAbnormalExpression) { _score += minorCriterionPoints; }
+                            if (hasGeneticChanges) { _score += minorCriterionPoints; }
+                            if (hasEvidence) { _score += minorCriterionPoints; }
+
+                            if (hasMajorCriteria && hasMinorCriteria) { 
+                                _score = 100; 
+                            }
+
+                            this.score = _score;
+                            return _score;
+                        }
+
+                    }))
+                })
+            </script>
+
+            <div x-data="survey" class="questions">                
+
+                <h2>Major Criteria</h2>
+            
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                    <template x-for="question in majorCriteriaQuestions">
+                        <li>
+                            <div><input :id="question.id" type="checkbox" @change="scorer();"></div>
+                            <div><label :for="question.id" x-text="question.text"></label></div>
+                        </li>
+                    </template>
+                </ul>
+
+                <h2>Minor Criteria</h2>
+
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                    <template x-for="question in minorCriteriaQuestions">
+                        <li>
+                            <div><input :id="question.id" type="checkbox" @change="scorer();"></div>
+                            <div><label :for="question.id" x-text="question.text"></label></div>
+                        </li>
+                    </template>
+                </ul>
+
+                <p style="font-size:2em;">
+                    Score: <span x-text="score"></span>%
+                </p>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <nav class="pure-g center" xstyle="background:#f0f0f0;padding:0.5em;">
+                <div class="pure-u-1-3">
+                    <a class="pure-menu-link" href="https://joelparkerhenderson.github.io/mast-cell-activation-syndrome-simple-survey/"><i class="fa-solid fa-house"></i>Home</a>
+                </div>
+                <div class="pure-u-1-3">
+                    <a class="pure-menu-link" href="https://github.com/joelparkerhenderson/mast-cell-activation-syndrome-simple-survey/"><i class="fa-solid fa-folder"></i>Code</a>
+                </div>
+                <div class="pure-u-1-3">
+                    <a class="pure-menu-link" href="mailto:joel@joelparkerhenderson.com" class="pure-menu-link"><i class="fa-solid fa-envelope"></i>Email</a>
+                </div>
+            </nav>
+        </footer>
+
+    </body>
+
+</html>
